@@ -122,7 +122,7 @@ npm run dev
 ## 📬 Contact
 
 **Aniket Vijay Solanke**  
-📧 aniketsolanke@example.com  
+📧 aniketsolanke1404@gmail.com  
 🔗 [Portfolio](https://portfolio-amber-delta-59.vercel.app/)
 🔗 [GitHub](https://github.com/Aniket8023)  
 🔗 [LinkedIn](https://www.linkedin.com/in/aniket-solanke-0a993325a/)
