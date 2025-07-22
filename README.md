@@ -43,7 +43,7 @@ A real-time job search platform integrating APIs like Adzuna, Jooble, and JSearc
 - Spring Boot  
 - RESTful APIs  
 - JWT Security  
-- MySQL  
+- MongoDB 
 
 ### 🌍 APIs Integrated
 - [Adzuna API](https://developer.adzuna.com/)  
