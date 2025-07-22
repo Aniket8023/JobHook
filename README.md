@@ -15,8 +15,8 @@ A real-time job search platform integrating APIs like Adzuna, Jooble, and JSearc
 - 📌 **Bookmark & Apply Jobs** (optional based on user role)
 - 👤 **Role-Based Access** for users and admins
 - 📈 **Admin Dashboard** for job listing statistics
-- 📱 **Responsive UI** using Angular
-- ☁️ **Spring Boot Backend + MySQL + JWT Security**
+- 📱 **Responsive UI** using React
+- ☁️ **Spring Boot Backend + MongoDB + JWT Security**
 - 🛰️ **Location-based filtering** using LocationIQ API
 
 ---
