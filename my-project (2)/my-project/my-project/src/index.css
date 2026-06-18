@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  body {
+    @apply text-white bg-mine-shaft-950;
+  }
+  h1, h2, h3, h4, h5, h6, p, span, div {
+    color: white;
+  }
+  ul, ol {
+    list-style: revert;
+    font-size: medium;
+  }
+  li {
+    margin-left: 1em;
+  }
+  /* Fix Mantine Dropdowns */
+  .mantine-Select-dropdown, .mantine-MultiSelect-dropdown, .mantine-Autocomplete-dropdown, .mantine-TagsInput-dropdown, .mantine-Combobox-dropdown {
+    background-color: #2d2d2d !important;
+    border-color: #454545 !important;
+  }
+  .mantine-Select-option, .mantine-MultiSelect-option, .mantine-Autocomplete-option, .mantine-TagsInput-option, .mantine-Combobox-option {
+    color: white !important;
+  }
+  .mantine-Select-option[data-hovered], .mantine-MultiSelect-option[data-hovered], .mantine-Autocomplete-option[data-hovered], .mantine-Combobox-option[data-hovered] {
+    background-color: #454545 !important;
+  }
+}
