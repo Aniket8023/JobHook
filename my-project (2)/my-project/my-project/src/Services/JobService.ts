@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080";
+const API_URL = "https://jobhook-46y3.onrender.com";
 
 const apiClient = axios.create({
     baseURL: API_URL,
