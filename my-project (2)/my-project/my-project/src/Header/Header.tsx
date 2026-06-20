@@ -103,21 +103,21 @@ const Header = () => {
             </div>
           </>
         ) : (
-          <div className="flex gap-2">
-            <Link
-              to="/login"
-              className="px-4 py-2 rounded-md bg-mine-shaft-800 hover:bg-mine-shaft-700"
-            >
-              Login
-            </Link>
+         <div className="flex gap-2 lg:hidden">
+          <Link
+            to="/login"
+            className="px-4 py-2 rounded-md bg-mine-shaft-800 hover:bg-mine-shaft-700"
+          >
+            Login
+          </Link>
 
-            <Link
-              to="/signup"
-              className="px-4 py-2 rounded-md bg-bright-sun-400 text-black font-semibold hover:bg-yellow-500"
-            >
-              Sign Up
-            </Link>
-          </div>
+          <Link
+            to="/signup"
+            className="px-4 py-2 rounded-md bg-bright-sun-400 text-black font-semibold hover:bg-yellow-500"
+          >
+            Sign Up
+          </Link>
+        </div>
         )}
 
       </div>
