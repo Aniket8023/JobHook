@@ -109,6 +109,54 @@ const Header = () => {
                   
                 </>
               )}
+
+              {user ? (
+  <>
+    <ProfileMenu />
+
+    <div
+      onClick={() => navigate("/notifications")}
+      className="bg-mine-shaft-900 p-2 rounded-full cursor-pointer"
+    >
+      <Indicator
+        color="red"
+        label={notificationCount}
+        disabled={notificationCount === 0}
+      >
+        <IconBell />
+      </Indicator>
+    </div>
+
+    <div className="hidden lg:flex bg-mine-shaft-900 p-2 rounded-full">
+      <IconSettings stroke={1.5} />
+    </div>
+
+    <div className="lg:hidden">
+      <Burger
+        opened={opened}
+        onClick={() => setOpened(!opened)}
+        color="white"
+        size="sm"
+      />
+    </div>
+  </>
+) : (
+  <div className="flex gap-3">
+    <Link
+      to="/login"
+      className="px-4 py-2 rounded bg-mine-shaft-800"
+    >
+      Login
+    </Link>
+
+    <Link
+      to="/signup"
+      className="px-4 py-2 rounded bg-bright-sun-400 text-black font-semibold"
+    >
+      Sign Up
+    </Link>
+  </div>
+)}
       </div>
           <Drawer
       opened={opened}
