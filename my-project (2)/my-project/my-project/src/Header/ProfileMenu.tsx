@@ -80,7 +80,10 @@ const ProfileMenu = () => {
           </Menu.Item>
         </Link>
 
-        <Menu.Item leftSection={<IconMessageCircle size={14} />}>
+        <Menu.Item
+          leftSection={<IconMessageCircle size={14} />}
+          onClick={() => navigate("/messages")}
+        >
           Messages
         </Menu.Item>
 

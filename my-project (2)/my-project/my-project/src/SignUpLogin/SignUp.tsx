@@ -60,57 +60,118 @@ const SignUp=()=>{
         }
     };
 
-    return <div className="w-1/2 px-20 flex flex-col justify-center gap-3">
-    <div className=" text-2xl font-semibold ">Create Account</div>
-    <form onSubmit={form.onSubmit(handleSubmit)} className="flex flex-col gap-3">
-        <TextInput 
-            withAsterisk
-            label="Full Name"
-            placeholder="Your name"
-            {...form.getInputProps('name')}
-        />
-        <TextInput 
-            withAsterisk
-            leftSection={<IconAt size={16} />}
-            label="Email"
-            placeholder="Your email"
-            {...form.getInputProps('email')}
-        />
+   return (
+  <div
+    className="
+w-full
+md:w-[50vw]
+flex-shrink-0
+px-6
+sm:px-10
+md:px-20
+flex
+flex-col
+justify-center
+gap-4
+"
+  >
+    <div
+      className="
+      text-2xl
+      md:text-3xl
+      font-semibold
+      text-center
+      md:text-left
+      "
+    >
+      Create Account
+    </div>
 
-        <Radio.Group
-            label="Account Type"
-            withAsterisk
-            {...form.getInputProps('accountType')}
-        >
-            <Group mt="xs">
-                <Radio value="JOB_SEEKER" label="Job Seeker" />
-                <Radio value="EMPLOYER" label="Employer" />
-            </Group>
-        </Radio.Group>
+    <form
+      onSubmit={form.onSubmit(handleSubmit)}
+      className="flex flex-col gap-3"
+    >
+      <TextInput
+        withAsterisk
+        label="Full Name"
+        placeholder="Your name"
+        {...form.getInputProps("name")}
+      />
 
-        <PasswordInput 
-            withAsterisk 
-            leftSection={<IconLock size={18} stroke={1.5} />}
-            label="Password" 
-            placeholder="Enter password" 
-            {...form.getInputProps('password')}
-        />
-        <PasswordInput 
-            withAsterisk 
-            leftSection={<IconLock size={18} stroke={1.5} />}
-            label="Confirm Password" 
-            placeholder="confirm password" 
-            {...form.getInputProps('confirmPassword')}
-        />
-        <Checkbox 
-            autoContrast 
-            label={<>I accept all{' '}<Anchor>terms & conditions</Anchor> </> }
-            {...form.getInputProps('acceptTerms', { type: 'checkbox' })}
-        />
-        <Button loading={loading} type="submit" autoContrast variant="filled">Sign Up</Button>
+      <TextInput
+        withAsterisk
+        leftSection={<IconAt size={16} />}
+        label="Email"
+        placeholder="Your email"
+        {...form.getInputProps("email")}
+      />
+
+      <Radio.Group
+        label="Account Type"
+        withAsterisk
+        {...form.getInputProps("accountType")}
+      >
+        <Group mt="xs">
+          <Radio value="JOB_SEEKER" label="Job Seeker" />
+          <Radio value="EMPLOYER" label="Employer" />
+        </Group>
+      </Radio.Group>
+
+      <PasswordInput
+        withAsterisk
+        leftSection={<IconLock size={18} />}
+        label="Password"
+        placeholder="Enter password"
+        {...form.getInputProps("password")}
+      />
+
+      <PasswordInput
+        withAsterisk
+        leftSection={<IconLock size={18} />}
+        label="Confirm Password"
+        placeholder="Confirm password"
+        {...form.getInputProps("confirmPassword")}
+      />
+
+      <Checkbox
+        label={
+          <>
+            I accept all <Anchor>terms & conditions</Anchor>
+          </>
+        }
+        {...form.getInputProps("acceptTerms", {
+          type: "checkbox",
+        })}
+      />
+
+      <Button
+        loading={loading}
+        type="submit"
+        autoContrast
+        variant="filled"
+        fullWidth
+        size="md"
+      >
+        Sign Up
+      </Button>
     </form>
-    <div className="mx-auto">Have an account? <Link to="/login" className="text-bright-sun-400 hover:underline" >
-    Login</Link></div>
-</div>
+
+    <div
+      className="
+      text-center
+      text-sm
+      md:text-base
+      "
+    >
+      Have an account?{" "}
+      <Link
+        to="/login"
+        className="text-bright-sun-400 hover:underline"
+      >
+        Login
+      </Link>
+    </div>
+  </div>
+);
 }
 export default SignUp;

@@ -72,8 +72,31 @@ const Login = () => {
         }
     };
 
-    return <div className="w-1/2 px-20 flex flex-col justify-center gap-3">
-        <div className=" text-2xl font-semibold ">Login to Account</div>
+    return <div
+           className="
+w-full
+md:w-[50vw]
+flex-shrink-0
+px-6
+sm:px-10
+md:px-20
+flex
+flex-col
+justify-center
+gap-4
+"
+            >
+        <div
+            className="
+            text-2xl
+            md:text-3xl
+            font-semibold
+            text-center
+            md:text-left
+            "
+            >
+            Login to Account
+            </div>
         <form onSubmit={form.onSubmit(handleSubmit)} className="flex flex-col gap-3">
             <TextInput 
                 withAsterisk
@@ -89,10 +112,33 @@ const Login = () => {
                 placeholder="Enter password" 
                 {...form.getInputProps('password')}
             />
-            <Button loading={loading} type="submit" autoContrast variant="filled">Login</Button>
-            <div className="text-right cursor-pointer text-bright-sun-400 hover:underline text-sm" onClick={open}>Forgot Password?</div>
+            <Button
+                loading={loading}
+                type="submit"
+                autoContrast
+                variant="filled"
+                fullWidth
+                size="md"
+                >
+                Login
+                </Button>
+            <div
+            className="
+            text-right
+            cursor-pointer
+            text-bright-sun-400
+            hover:underline
+            text-sm
+            md:text-base
+            " onClick={open}>Forgot Password?</div>
         </form>
-        <div className="mx-auto">Don't have an account? <Link to="/signup" className="text-bright-sun-400 hover:underline" >
+                <div
+            className="
+            text-center
+            text-sm
+            md:text-base
+            "
+            >Don't have an account? <Link to="/signup" className="text-bright-sun-400 hover:underline" >
             SignUp</Link></div>
         <ResetPassword opened={opened} close={close} />
     </div>

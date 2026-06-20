@@ -12,6 +12,7 @@ import {
 
 import {
   useEffect,
+  useRef,
   useState,
 } from "react";
 
@@ -73,6 +74,14 @@ const ChatPage = () => {
     }
   };
 
+  // const bottomRef = useRef<HTMLDivElement>(null);
+
+  // useEffect(() => {
+  //   bottomRef.current?.scrollIntoView({
+  //     behavior: "smooth"
+  //   });
+  // }, [messages]);
+
   // Send Message
   const handleSend = async () => {
 
@@ -99,6 +108,8 @@ const ChatPage = () => {
     }
   };
 
+  
+
   useEffect(() => {
 
     loadProfile();
@@ -123,6 +134,8 @@ const ChatPage = () => {
       </div>
     );
   }
+
+  
 
   return (
 
@@ -278,6 +291,8 @@ const ChatPage = () => {
               }}
             />
 
+            
+
             <ActionIcon
               size={50}
               radius="xl"
@@ -289,6 +304,7 @@ const ChatPage = () => {
             </ActionIcon>
 
           </div>
+          {/* <div ref={bottomRef}></div> */}
 
         </div>
 

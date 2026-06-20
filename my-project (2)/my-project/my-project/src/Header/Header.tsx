@@ -5,16 +5,52 @@ import {
 } from "@mantine/core";
 import { IconAnchor, IconBell, IconSettings } from "@tabler/icons-react";
 import NavLinks from "./NavLinks";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import ProfileMenu from "./ProfileMenu";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { IconMessageCircle } from "@tabler/icons-react";
+import { useEffect} from "react";
+import { getNotifications } from "../Services/NotificationService";
 
 const Header = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [opened, setOpened] = useState(false);
   const user = localStorage.getItem("user");
+  const [notificationCount, setNotificationCount] = useState(0);
 
+
+ useEffect(() => {
+
+  const loadNotifications = async () => {
+
+    try {
+
+      const currentUser = JSON.parse(
+        localStorage.getItem("user") || "{}"
+      );
+
+      const data = await getNotifications(
+        currentUser.profileId
+      );
+
+      setNotificationCount(data.length);
+
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  loadNotifications();
+
+  const interval = setInterval(() => {
+    loadNotifications();
+  }, 5000);
+
+  return () => clearInterval(interval);
+
+}, []);
   return location.pathname != "/signup" && location.pathname != "/login" ? (
     <div className="w-full bg-mine-shaft-950 px-3 md:px-6 text-white h-20 flex justify-between items-center"
     >
@@ -40,16 +76,20 @@ const Header = () => {
                 <>
                   <ProfileMenu />
 
-                  <div className="bg-mine-shaft-900 p-2 rounded-full">
-                    <Indicator
-                      color="bright-sun.4"
-                      offset={6}
-                      size={8}
-                      processing
+              
+
+                  <div
+                      onClick={() => navigate("/notifications")}
+                      className="bg-mine-shaft-900 p-2 rounded-full cursor-pointer"
                     >
-                      <IconBell stroke={1.5} />
-                    </Indicator>
-                  </div>
+                    <Indicator
+                        color="red"
+                        label={notificationCount}
+                       disabled={notificationCount === 0}
+                      >
+                        <IconBell />
+                      </Indicator>
+                    </div>
 
                   {/* Desktop Settings */}
                   <div className="hidden lg:flex bg-mine-shaft-900 p-2 rounded-full">
@@ -65,24 +105,26 @@ const Header = () => {
                       size="sm"
                     />
                   </div>
+
+                  
                 </>
               )}
       </div>
-      <Drawer
-  opened={opened}
-  onClose={() => setOpened(false)}
-  title="Menu"
-  position="right"
-  size="70%"
->
-  <NavLinks mobile />
+          <Drawer
+      opened={opened}
+      onClose={() => setOpened(false)}
+      title="Menu"
+      position="right"
+      size="70%"
+    >
+      <NavLinks mobile />
 
-  <div className="mt-6 border-t border-mine-shaft-700 pt-4">
-    <div className="flex items-center gap-3 cursor-pointer text-lg">
-      <IconSettings size={20} />
-      <span>Settings</span>
-    </div>
-  </div>
+      <div className="mt-6 border-t border-mine-shaft-700 pt-4">
+        <div className="flex items-center gap-3 cursor-pointer text-lg">
+          <IconSettings size={20} />
+          <span>Settings</span>
+        </div>
+      </div>
 </Drawer>
     </div>
     

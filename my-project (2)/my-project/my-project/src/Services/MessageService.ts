@@ -37,3 +37,14 @@ export const getConversation = async (
 
   return res.data;
 };
+
+export const getAllUserMessages = async (
+  profileId:number
+) => {
+
+  const res = await axios.get(
+    `${API_URL}/messages/user/${profileId}`
+  );
+
+  return res.data;
+};

@@ -25,6 +25,8 @@ import JobHistoryPage from './Pages/JobHistoryPage';
 import SignUpPage from './Pages/SignUpPage';
 import ProfilePage from './Pages/ProfilePage';
 import ChatPage from './Pages/ChatPage';
+import MessagesPage from './Pages/MessagesPage';
+import NotificationPage from './Pages/NotificationPage';
 
 function App() {
   const theme=createTheme({
@@ -69,11 +71,15 @@ function App() {
           <Route path='/job-history' element={<JobHistoryPage/>}/>
           <Route path='/talent-profile/:id' element={<TalentProfilePage/>}/>
           <Route path='*' element={<HomePage/>}/>    
-          <Route
-          path="/chat/:id"
-          element={<ChatPage/>}
-          />
+           <Route path="/chat/:id" element={<ChatPage/>}/>
+          <Route path="/messages" element={<MessagesPage/>}/>
+ <Route
+ path="/notifications"
+ element={<NotificationPage />}
+/>
         </Routes>
+
+        
         <Footer/>
         </div>
       </BrowserRouter>

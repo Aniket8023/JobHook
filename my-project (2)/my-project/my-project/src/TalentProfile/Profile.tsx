@@ -2,8 +2,11 @@ import { Button, Divider } from "@mantine/core";
 import { IconBriefcase, IconMapPin } from "@tabler/icons-react";
 import ExpCard from "./ExpCard";
 import CertiCard from "./CertiCard";
+import { useNavigate } from "react-router-dom";
 
-;const Profile=(props:any)=>{
+
+const Profile=(props:any)=>{
+    const navigate = useNavigate(); 
 return <div className="w-full xl:w-2/3">
 <div className="relative">
         <img
@@ -32,8 +35,14 @@ return <div className="w-full xl:w-2/3">
 />
   </div> 
     <div className="px-3 mt-16">
-        <div className="text-2xl md:text-3xl font-semibold flex flex-col sm:flex-row gap-3 sm:justify-between">{props.name}<Button color="bright-sun.4" variant="light" 
-        >Message</Button></div>
+        <div className="text-2xl md:text-3xl font-semibold flex flex-col sm:flex-row gap-3 sm:justify-between">{props.name}
+            <Button
+  color="bright-sun.4"
+  variant="light"
+  onClick={() => navigate(`/chat/${props.id}`)}
+>
+  Message
+</Button></div>
         <div className="text-base md:text-xl flex gap-1 items-center flex-wrap"><IconBriefcase className="h-5 w-5" stroke={1.5}/>{props.role} &bull; {props.company}</div>
         <div className="flex gap-1 text-sm md:text-lg text-mine-shaft-300 items-center flex-wrap">
           <IconMapPin className="h-5 w-5" stroke={1.5} />{props.location}
