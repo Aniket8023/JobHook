@@ -1,6 +1,8 @@
 # 💼 Job Hook - Smart Job Aggregator Portal
 A real-time job search platform integrating APIs like Adzuna, Jooble, and JSearch with Spring Boot backend and Angular frontend. Includes resume-based job recommendations.
 
+## Live Demo:- [(https://job-hook-pi.vercel.app/)]
+
 ## 🚀 Key Features   
 
 - 🌐 **Real-Time Job Listings** via APIs (Adzuna, Jooble, JSearch)
