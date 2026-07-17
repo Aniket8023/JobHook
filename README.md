@@ -3,7 +3,7 @@ A real-time job search platform integrating APIs like Adzuna, Jooble, and JSearc
 
 ## Live Demo:- [(https://job-hook-pi.vercel.app/)]
 
-## 🚀 Key Features   
+## 🚀 Key Features  
 
 - 🌐 **Real-Time Job Listings** via APIs (Adzuna, Jooble, JSearch)
 - 📄 **Resume-Based Job Recommendation System**
